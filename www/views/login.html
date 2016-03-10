@@ -1,0 +1,21 @@
+<ion-view title="Welcome to getGeo!!!">
+    <ion-content padding="'true'" class="has-header">
+        <form name="loginForm" class="list" novalidate ng-submit="submit(loginForm.$valid, username, password)">
+            <div class="spacer" style="width: 300px; height: 43px;"></div>
+            <ion-list>                
+                <p class="text-center assertive" ng-if="hasServerError">
+                    Username or password error
+                </p>
+                <label class="item item-input">
+                    <input type="text" placeholder="Username" ng-model="username" required>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Password" ng-model="password" required>
+                </label>
+            </ion-list>
+            <div class="spacer" style="width: 300px; height: 43px;"></div>
+            <button type="submit" class="button button-calm button-block">Log in</button>
+           
+        </form>
+    </ion-content>
+</ion-view>

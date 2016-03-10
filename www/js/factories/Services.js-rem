@@ -1,0 +1,33 @@
+/**
+ * Created by gkopevski on 11/11/14.
+ */
+ angular.module('mapAm').factory('dssService', [ function($http) {
+
+
+
+
+    var gskServices = {};
+
+    
+    var gskUrl ="http://162.218.89.121/find/getjson.php?";
+
+    gskServices.getVenuesByCategory = function(latitude,longitude,categoryId){
+        var url =gskUrl + "&ll=" +latitude+" " + longitude + "&type=" +categoryId;
+
+        var config = {method: 'GET', url: url, cache: true};
+        var promise = $http(config);
+        return promise;
+    };
+
+    gskServices.categories = {
+        "PMS":PMS,
+        "Pharmacy":Pharmacy,
+        "nightLife":nightLife,
+        "outdoorsAndRecreation":outdoorsAndRecreation,
+        "shopsAndServices":shopsAndServices,
+        "travelAndTranspot":travelAndTranspot
+    };
+
+    return gskServices;
+
+}]);
